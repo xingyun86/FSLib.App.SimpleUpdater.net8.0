@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>UpdateProjectBuilder</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>globe_download.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FSLib.App.SimpleUpdater.Generator.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <CodeAnalysisLogFile>bin\debug\UpdateProjectBuilder.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <DocumentationFile>bin\debug\UpdateProjectBuilder.XML</DocumentationFile>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <CodeAnalysisLogFile>bin\release\UpdateProjectBuilder.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <DocumentationFile>
+    </DocumentationFile>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ifish.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Controls\ProjectComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\ThemeConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\AboutPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\ArgumentGenerator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\FileComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FileConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\FileListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FileSysTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\OptionTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="globe_download.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FSLib.App.SimpleUpdater\FSLib.App.SimpleUpdater.csproj" />
+    <ProjectReference Include="..\FSLib.Extension-master\FSLib.Extension.Json\FSLib.Extension.Json.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+</Project>

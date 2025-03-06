@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<OutputType>WinExe</OutputType>
+	<PublishSingleFile>true</PublishSingleFile>
+	<SelfContained>true</SelfContained>
+	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	<PublishReadyToRun>true</PublishReadyToRun>
+	<StartupObject>UpdateTestHost.NetCoreSingle.Program</StartupObject>
+	<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	<TargetFramework>net8.0-windows7.0</TargetFramework>
+	<UseWindowsForms>true</UseWindowsForms>
+	<BaseOutputPath>bin\</BaseOutputPath>
+</PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FSLib.App.SimpleUpdater\FSLib.App.SimpleUpdater.csproj" />
+  </ItemGroup>
+
+</Project>
